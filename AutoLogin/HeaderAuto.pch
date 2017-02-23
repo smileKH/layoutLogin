@@ -1,0 +1,36 @@
+//
+//  HeaderAuto.pch
+//  AutoLogin
+//
+//  Created by aplle on 16/1/13.
+//  Copyright © 2016年 fenger. All rights reserved.
+//
+
+#ifndef HeaderAuto_pch
+#define HeaderAuto_pch
+
+#define SCREEN_WIDTH            ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT           ([[UIScreen mainScreen] bounds].size.height)
+#define IS_IPHONE               (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define ISIPHONE4_OR_LESS       (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define ISIPHONE5               (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define ISIPHONE6               (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define ISIPHONE6P              (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+
+#define     ScreenWidth         (ISIPHONE6P? 414:(ISIPHONE6? 375:320))
+#pragma mark - 账号系统
+#define     PASSWORD                        @"PASSWORD"
+#define     ACCOUNT                         @"ACCOUNT"
+#define     AUTOLOGIN                       @"AUTOLOGIN"
+#define ISIOS7_OR_LATER     ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.99)
+#define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#endif /* HeaderAuto_pch */
+
+#ifdef __OBJC__
+
+#import "AppDelegate.h"
+#import "LoginManage.h"
+#endif
+
+extern AppDelegate *app;
